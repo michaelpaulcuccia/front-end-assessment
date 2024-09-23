@@ -1,11 +1,10 @@
 import "./header.css";
+import zicasso_logo from "../../assets/zicasso_logo.png";
 
 const Header = () => {
   return (
     <header className="header">
-      <div className="logo">
-        <h1>Header</h1>
-      </div>
+      <img className="header-image" src={zicasso_logo} alt="" />
     </header>
   );
 };

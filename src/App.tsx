@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/header";
+import Container from "./components/container";
 import Card from "./components/card";
 import CardGrid from "./components/cardGrid";
 import { cards, defaultCard, CardInterface } from "./constants";
@@ -15,7 +16,7 @@ const shuffleCards = (array: CardInterface[]) => {
 const shuffledCards = shuffleCards([...cards]);
 
 const App = () => (
-  <>
+  <Container>
     <Header />
     <CardGrid>
       {shuffledCards.map((item, i) => (
@@ -27,7 +28,7 @@ const App = () => (
         />
       ))}
     </CardGrid>
-  </>
+  </Container>
 );
 
 export default App;
