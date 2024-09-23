@@ -1,4 +1,5 @@
 import "./App.css";
+import { CardProvider } from "./context/CardContext";
 import Header from "./components/header";
 import Container from "./components/container";
 import Card from "./components/card";
@@ -16,19 +17,21 @@ const shuffleCards = (array: CardInterface[]) => {
 const shuffledCards = shuffleCards([...cards]);
 
 const App = () => (
-  <Container>
-    <Header />
-    <CardGrid>
-      {shuffledCards.map((item, i) => (
-        <Card
-          key={i}
-          name={item.name}
-          img={item.img}
-          defaultImg={defaultCard.img}
-        />
-      ))}
-    </CardGrid>
-  </Container>
+  <CardProvider>
+    <Container>
+      <Header />
+      <CardGrid>
+        {shuffledCards.map((item, i) => (
+          <Card
+            key={i}
+            name={item.name}
+            img={item.img}
+            defaultImg={defaultCard.img}
+          />
+        ))}
+      </CardGrid>
+    </Container>
+  </CardProvider>
 );
 
 export default App;
