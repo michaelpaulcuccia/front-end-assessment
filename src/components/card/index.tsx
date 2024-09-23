@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useCardContext } from "../../hooks/useCard";
 import "./card.css";
 
 interface CardProps {
@@ -10,17 +9,14 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ img, name, defaultImg }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const { selectCard } = useCardContext();
 
-  const handleFlip = () => {
+  const handleFlip = (cardName: string) => {
     setIsFlipped((prev) => !prev);
-    setTimeout(() => {
-      selectCard(name);
-    }, 500);
+    console.log(cardName);
   };
 
   return (
-    <div className="flip-card" onClick={handleFlip}>
+    <div className="flip-card" onClick={() => handleFlip(name)}>
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         <div className="flip-card-front">
           <img className="card-image" src={defaultImg} alt={name} />
