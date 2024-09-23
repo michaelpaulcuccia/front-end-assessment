@@ -11,16 +11,19 @@ const Card: React.FC<CardProps> = ({ img, name, defaultImg }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleFlip = () => {
-    setIsFlipped(true);
+    setIsFlipped((prev) => !prev);
   };
 
   return (
-    <div className={`card ${isFlipped ? "flipped" : ""}`} onClick={handleFlip}>
-      <img
-        className="card-image"
-        src={isFlipped ? img : defaultImg}
-        alt={name}
-      />
+    <div className="flip-card" onClick={handleFlip}>
+      <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
+        <div className="flip-card-front">
+          <img className="card-image" src={defaultImg} alt={name} />
+        </div>
+        <div className="flip-card-back">
+          <img className="card-image" src={img} alt={name} />
+        </div>
+      </div>
     </div>
   );
 };
