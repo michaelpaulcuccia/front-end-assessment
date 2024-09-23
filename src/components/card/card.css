@@ -1,0 +1,16 @@
+.component {
+  border: 1px solid black;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.component.flipped {
+  background-color: black;
+  color: white;
+}
