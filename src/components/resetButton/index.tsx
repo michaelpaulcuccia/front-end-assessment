@@ -8,17 +8,8 @@ interface ButtonProps {
 const ResetButton: React.FC<ButtonProps> = ({ onClick }) => {
   const [buttonText, setButtonText] = useState("Click to Start");
 
-  // const handleClick = () => {
-  //   if (buttonText === "Reset") {
-  //     window.location.reload();
-  //   } else {
-  //     onClick();
-  //     setButtonText("Reset");
-  //   }
-  // };
-
   const handleClick = () => {
-    onClick();
+    onClick(); //resets game by triggering shuffle
     setButtonText("Reset");
   };
 
