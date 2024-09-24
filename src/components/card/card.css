@@ -17,6 +17,10 @@
   transform: rotateY(180deg);
 }
 
+.flip-card-inner.flipped.matched {
+  border: 3px solid black;
+}
+
 .flip-card-front,
 .flip-card-back {
   position: absolute;
