@@ -12,7 +12,7 @@ const ResetButton: React.FC<ButtonProps> = ({ onClick }) => {
 
   return (
     <button className="reset-button" onClick={handleClick}>
-      reset
+      Reset
     </button>
   );
 };

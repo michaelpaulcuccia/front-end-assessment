@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../context/ThemeContext";
 import "./themeSelector.css";
 
@@ -6,9 +7,13 @@ const themes = ["travel", "art", "pets", "music"];
 
 const ThemeSelector: React.FC = () => {
   const { theme, setTheme } = useContext(ThemeContext);
+  const navigate = useNavigate();
 
   const handleThemeChange = (selectedTheme: string) => {
     setTheme(selectedTheme);
+    setTimeout(() => {
+      navigate("/Game");
+    }, 1000);
   };
 
   return (
