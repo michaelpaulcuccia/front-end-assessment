@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/header";
 import Container from "./components/container";
-import { cards as cardData, CardInterface } from "./constants";
 import ResetButton from "./components/resetButton";
+import CardGrid from "./components/cardGrid";
+import Card from "./components/card";
+import { cards as cardData, CardInterface } from "./constants";
 
 const App: React.FC = () => {
   const [cards, setCards] = useState<CardInterface[]>([]);
@@ -21,8 +23,14 @@ const App: React.FC = () => {
 
   return (
     <Container>
-      <Header />
-      <ResetButton onClick={shuffle} />
+      <Header>
+        <ResetButton onClick={shuffle} />
+      </Header>
+      <CardGrid>
+        {cards.map((item, i) => (
+          <Card key={i} name={item.name} img={item.img} />
+        ))}
+      </CardGrid>
     </Container>
   );
 };
