@@ -17,3 +17,13 @@
 .reset-button:focus {
   outline: none;
 }
+
+.selectedTheme {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* 
+uses existing "reset-button" class with 
+components/themeSelector/themeSelector.css
+*/
