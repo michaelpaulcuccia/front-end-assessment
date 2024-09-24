@@ -1,10 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../context/ThemeContext";
 import Header from "../components/header";
 import ResetButton from "../components/resetButton";
 import CardGrid from "../components/cardGrid";
 import Card from "../components/card";
 import { getCardData, CardInterface } from "../constants";
+import Banner from "../components/banner";
 
 const Game: React.FC = () => {
   const [cards, setCards] = useState<CardInterface[]>([]);
@@ -12,8 +14,11 @@ const Game: React.FC = () => {
   const [pickTwo, setPickTwo] = useState<CardInterface | null>(null);
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const [matchedCards, setMatchedCards] = useState<number[]>([]);
-
+  const [bannerMessage, setBannerMessage] = useState<string>("");
+  const [bannerVisible, setBannerVisible] = useState<boolean>(false);
+  const [bannerColor, setBannerColor] = useState<string>("gray"); // State for the banner color
   const { theme } = useContext(ThemeContext);
+  const navigate = useNavigate();
 
   // Fetch card data based on the current theme
   useEffect(() => {
@@ -22,27 +27,29 @@ const Game: React.FC = () => {
 
   // Function to shuffle cards and reset the game state
   const shuffle = () => {
-    const cardData = getCardData(theme); //Get card data based on the current theme
+    const cardData = getCardData(theme); // Get card data based on the current theme
     const doubledArray = [...cardData, ...cardData]
       .sort(() => Math.random() - 0.5)
       .map((card, index) => ({ ...card, id: index }));
 
     setCards(doubledArray);
-    //Resets game state
+    // Resets game state
     setFlippedCards([]);
     setMatchedCards([]);
     setPickOne(null);
     setPickTwo(null);
   };
 
+  //console.log(cards.length);
+
   const handlePick = (card: CardInterface, index: number) => {
-    //Ignore if two cards are already picked
+    // Ignore if two cards are already picked
     if (pickOne && pickTwo) return;
 
-    //Ignore if the card is already flipped or matched
+    // Ignore if the card is already flipped or matched
     if (flippedCards.includes(index) || matchedCards.includes(index)) return;
 
-    //Update flipped cards
+    // Update flipped cards
     const newFlippedCards = [...flippedCards, index];
     setFlippedCards(newFlippedCards);
 
@@ -58,6 +65,15 @@ const Game: React.FC = () => {
     }
   };
 
+  const showBanner = (message: string, color: string = "gray") => {
+    setBannerMessage(message);
+    setBannerVisible(true);
+    setBannerColor(color);
+    setTimeout(() => {
+      setBannerVisible(false);
+    }, 1500);
+  };
+
   const checkForMatch = (
     flipped: number[],
     pickOne: CardInterface | null,
@@ -65,17 +81,21 @@ const Game: React.FC = () => {
   ) => {
     if (pickOne && pickTwo) {
       if (pickOne.name === pickTwo.name) {
-        alert("Match found!");
+        showBanner("Match found!", "green");
         const newMatchedCards = [...matchedCards, ...flipped];
         setMatchedCards(newMatchedCards);
 
         // Check if all cards are matched
-        if (newMatchedCards.length === 14 || newMatchedCards.length === 16) {
-          alert("You Win!");
-          window.location.reload();
+        if (newMatchedCards.length === 14) {
+          showBanner("You Win!", "blue");
+
+          //delay of 2 seconds before returning home
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
         }
       } else {
-        alert("No match!");
+        showBanner("No match!", "red");
         setFlippedCards([]);
       }
       // Reset picked cards
@@ -83,6 +103,9 @@ const Game: React.FC = () => {
       setPickTwo(null);
     }
   };
+
+  console.log(cards.length);
+  console.log(matchedCards);
 
   return (
     <>
@@ -100,6 +123,11 @@ const Game: React.FC = () => {
           />
         ))}
       </CardGrid>
+      <Banner
+        message={bannerMessage}
+        visible={bannerVisible}
+        backgroundColor={bannerColor} // Pass the background color
+      />
     </>
   );
 };
