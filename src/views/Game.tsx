@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 import Header from "../components/header";
 import ResetButton from "../components/resetButton";
 import CardGrid from "../components/cardGrid";
 import Card from "../components/card";
-import { cards as cardData, CardInterface } from "../constants";
+import { getCardData, CardInterface } from "../constants";
 
 const Game: React.FC = () => {
   const [cards, setCards] = useState<CardInterface[]>([]);
@@ -12,13 +13,22 @@ const Game: React.FC = () => {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const [matchedCards, setMatchedCards] = useState<number[]>([]);
 
+  const { theme } = useContext(ThemeContext);
+
+  // Fetch card data based on the current theme
+  useEffect(() => {
+    shuffle();
+  }, [theme]);
+
   // Function to shuffle cards and reset the game state
   const shuffle = () => {
+    const cardData = getCardData(theme); //Get card data based on the current theme
     const doubledArray = [...cardData, ...cardData]
       .sort(() => Math.random() - 0.5)
       .map((card, index) => ({ ...card, id: index }));
+
     setCards(doubledArray);
-    //RESET ITEMS
+    //Resets game state
     setFlippedCards([]);
     setMatchedCards([]);
     setPickOne(null);
@@ -26,17 +36,16 @@ const Game: React.FC = () => {
   };
 
   const handlePick = (card: CardInterface, index: number) => {
-    // Ignore if two cards are already picked
+    //Ignore if two cards are already picked
     if (pickOne && pickTwo) return;
 
-    // Ignore if the card is already flipped or matched
+    //Ignore if the card is already flipped or matched
     if (flippedCards.includes(index) || matchedCards.includes(index)) return;
 
-    // Update flipped cards
+    //Update flipped cards
     const newFlippedCards = [...flippedCards, index];
     setFlippedCards(newFlippedCards);
 
-    // If no first pick, set the first picked card
     if (!pickOne) {
       setPickOne(card);
     } else {
@@ -60,7 +69,7 @@ const Game: React.FC = () => {
         const newMatchedCards = [...matchedCards, ...flipped];
         setMatchedCards(newMatchedCards);
 
-        // Check if all cards are matched (strange, it's either 14 or 16???)
+        // Check if all cards are matched
         if (newMatchedCards.length === 14 || newMatchedCards.length === 16) {
           alert("You Win!");
           window.location.reload();
