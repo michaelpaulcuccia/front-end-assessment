@@ -1,5 +1,11 @@
+import ThemeSelector from "../components/themeSelector";
+
 const Home = () => {
-  return <div>home</div>;
+  return (
+    <div>
+      <ThemeSelector />
+    </div>
+  );
 };
 
 export default Home;
