@@ -15,17 +15,17 @@ const App: React.FC = () => {
         <Container>
           <NavBar>
             <div>
-              <Link style={{ textDecoration: "none" }} to="/">
+              <Link className="styled-link" to="/">
                 Home
               </Link>
             </div>
             <div>
-              <Link style={{ textDecoration: "none" }} to="/Game">
+              <Link className="styled-link" to="/Game">
                 Game
               </Link>
             </div>
             <div>
-              <Link style={{ textDecoration: "none" }} to="/About">
+              <Link className="styled-link" to="/About">
                 About
               </Link>
             </div>

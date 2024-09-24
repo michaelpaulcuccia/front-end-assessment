@@ -18,3 +18,13 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+.styled-link {
+  font-size: 22px;
+  text-decoration: none;
+  color: #444444;
+}
+
+.styled-link:hover {
+  font-weight: bold;
+}
