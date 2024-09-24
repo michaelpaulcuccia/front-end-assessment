@@ -14,7 +14,7 @@
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   align-content: center;
   text-decoration: none;
@@ -24,6 +24,7 @@
 .nav-container > * {
   animation: drop-in 0.75s ease forwards;
   opacity: 0;
+  margin-right: 24px;
 }
 
 /* Staggered effect */
