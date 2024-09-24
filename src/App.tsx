@@ -2,11 +2,12 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
+import Container from "./components/container";
 import NavBar from "./components/navbar";
+import CookieConsent from "./components/cookieConsent";
 import Home from "./views/Home";
 import About from "./views/About";
 import Game from "./views/Game";
-import Container from "./components/container";
 
 const App: React.FC = () => {
   return (
@@ -35,6 +36,7 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/game" element={<Game />} />
           </Routes>
+          <CookieConsent />
         </Container>
       </Router>
     </ThemeProvider>

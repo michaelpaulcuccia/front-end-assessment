@@ -22,6 +22,7 @@ const ThemeSelector: React.FC = () => {
         Welcome! <br />
         Please Select A Theme:
       </h3>
+      <br />
       {themes.map((themeOption) => (
         <button
           className={`reset-button ${
