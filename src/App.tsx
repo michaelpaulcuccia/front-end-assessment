@@ -12,7 +12,10 @@ const App: React.FC = () => {
   const [turns, setTurns] = useState(0);
   const [pickOne, setPickOne] = useState(null);
   const [pickTwo, setPickTwo] = useState(null);
-  const [flippedCards, setFlippedCards] = useState<any[]>([]);
+  //const [flippedCards, setFlippedCards] = useState<any[]>([]);
+  const [flippedCards, setFlippedCards] = useState<string[]>([]);
+
+  console.log(turns, pickOne, pickTwo, setPickOne, setPickTwo);
 
   const shuffle = () => {
     const doubledArray = [...cardData, ...cardData]
