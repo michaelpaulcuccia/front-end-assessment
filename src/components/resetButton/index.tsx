@@ -8,7 +8,7 @@ interface ButtonProps {
 const ResetButton: React.FC<ButtonProps> = ({ onClick }) => {
   return (
     <button className="reset-button" onClick={onClick}>
-      reset
+      Reset
     </button>
   );
 };

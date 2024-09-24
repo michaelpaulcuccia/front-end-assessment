@@ -1,34 +1,30 @@
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/header";
 import Container from "./components/container";
-import Card from "./components/card";
-import CardGrid from "./components/cardGrid";
-import { cards, defaultCard, CardInterface } from "./constants";
+import { cards as cardData, CardInterface } from "./constants";
+import ResetButton from "./components/resetButton";
 
-const shuffleCards = (array: CardInterface[]) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
+const App: React.FC = () => {
+  const [cards, setCards] = useState<CardInterface[]>([]);
+  const [turns, setTurns] = useState(0);
+
+  const shuffle = () => {
+    const doubledArray = [...cardData, ...cardData]
+      .sort(() => Math.random() - 0.5)
+      .map((card) => ({ ...card, id: Math.random() }));
+    setCards(doubledArray);
+    setTurns(0);
+  };
+
+  console.log(cards);
+
+  return (
+    <Container>
+      <Header />
+      <ResetButton onClick={shuffle} />
+    </Container>
+  );
 };
-
-const shuffledCards = shuffleCards([...cards]);
-
-const App = () => (
-  <Container>
-    <Header />
-    <CardGrid>
-      {shuffledCards.map((item, i) => (
-        <Card
-          key={i}
-          name={item.name}
-          img={item.img}
-          defaultImg={defaultCard.img}
-        />
-      ))}
-    </CardGrid>
-  </Container>
-);
 
 export default App;

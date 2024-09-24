@@ -36,30 +36,6 @@ export const cards: CardInterface[] = [
     name: "venice",
     img: venice,
   },
-  {
-    name: "beach",
-    img: beach,
-  },
-  {
-    name: "camel",
-    img: camel,
-  },
-  {
-    name: "cathedral",
-    img: cathedral,
-  },
-  {
-    name: "lighthouse",
-    img: lighthouse,
-  },
-  {
-    name: "road",
-    img: road,
-  },
-  {
-    name: "venice",
-    img: venice,
-  },
 ];
 
 export const defaultCard = { name: "card", img: card };
