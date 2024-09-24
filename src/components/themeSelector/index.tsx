@@ -1,9 +1,8 @@
-// src/components/ThemeSelector.tsx
 import React, { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import "./themeSelector.css";
 
-const themes = ["travel", "art", "pets"];
+const themes = ["travel", "art", "pets", "music"];
 
 const ThemeSelector: React.FC = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -14,7 +13,10 @@ const ThemeSelector: React.FC = () => {
 
   return (
     <div>
-      <h3>Select Theme:</h3>
+      <h3>
+        Welcome! <br />
+        Please Select A Theme:
+      </h3>
       {themes.map((themeOption) => (
         <button
           className={`reset-button ${

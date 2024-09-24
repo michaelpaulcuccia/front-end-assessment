@@ -20,13 +20,13 @@ const App: React.FC = () => {
               </Link>
             </div>
             <div>
-              <Link style={{ textDecoration: "none" }} to="/About">
-                About
+              <Link style={{ textDecoration: "none" }} to="/Game">
+                Game
               </Link>
             </div>
             <div>
-              <Link style={{ textDecoration: "none" }} to="/Game">
-                Game
+              <Link style={{ textDecoration: "none" }} to="/About">
+                About
               </Link>
             </div>
           </NavBar>

@@ -22,6 +22,14 @@ import artFour from "../assets/images/artFour.jpg";
 import artFive from "../assets/images/artFive.jpg";
 import artSix from "../assets/images/artSix.jpg";
 
+//MUSIC
+import musicOne from "../assets/images/musicOne.jpg";
+import musicTwo from "../assets/images/musicTwo.jpg";
+import musicThree from "../assets/images/musicThree.jpg";
+import musicFour from "../assets/images/musicFour.jpg";
+import musicFive from "../assets/images/musicFive.jpg";
+import musicSix from "../assets/images/musicSix.jpg";
+
 //DEFAULT CARD BACK
 import card from "../assets/images/card.jpg";
 
@@ -130,12 +138,47 @@ const artCards: CardInterface[] = [
   },
 ];
 
+const musicCards: CardInterface[] = [
+  {
+    id: 19,
+    name: "musicOne",
+    img: musicOne,
+  },
+  {
+    id: 20,
+    name: "musicTwo",
+    img: musicTwo,
+  },
+  {
+    id: 21,
+    name: "musicThree",
+    img: musicThree,
+  },
+  {
+    id: 22,
+    name: "musicFour",
+    img: musicFour,
+  },
+  {
+    id: 23,
+    name: "musicFive",
+    img: musicFive,
+  },
+  {
+    id: 24,
+    name: "musicSix",
+    img: musicSix,
+  },
+];
+
 export const getCardData = (theme: string): CardInterface[] => {
   switch (theme) {
     case "pets":
       return petCards;
     case "art":
       return artCards;
+    case "music":
+      return musicCards;
     default:
       return travelCards;
   }
