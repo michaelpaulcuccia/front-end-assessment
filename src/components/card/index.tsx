@@ -1,23 +1,16 @@
-import { useState } from "react";
 import "./card.css";
 import card from "../../assets/images/card.jpg";
 
 interface CardProps {
   img: string;
   name: string;
-  handlePick: (name: string) => void;
+  handlePick: () => void;
+  isFlipped: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ img, name, handlePick }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const handleClick = () => {
-    setIsFlipped((prev) => !prev);
-    handlePick(name);
-  };
-
+const Card: React.FC<CardProps> = ({ img, name, handlePick, isFlipped }) => {
   return (
-    <div className="flip-card" onClick={handleClick}>
+    <div className="flip-card" onClick={handlePick}>
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         <div className="flip-card-front">
           <img className="card-image" src={card} alt={name} />

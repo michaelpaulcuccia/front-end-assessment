@@ -9,25 +9,72 @@ import { cards as cardData, CardInterface } from "./constants";
 
 const App: React.FC = () => {
   const [cards, setCards] = useState<CardInterface[]>([]);
-  const [turns, setTurns] = useState(0);
-  const [pickOne, setPickOne] = useState(null);
-  const [pickTwo, setPickTwo] = useState(null);
-  //const [flippedCards, setFlippedCards] = useState<any[]>([]);
-  const [flippedCards, setFlippedCards] = useState<string[]>([]);
+  const [pickOne, setPickOne] = useState<CardInterface | null>(null);
+  const [pickTwo, setPickTwo] = useState<CardInterface | null>(null);
+  const [flippedCards, setFlippedCards] = useState<number[]>([]);
+  const [matchedCards, setMatchedCards] = useState<number[]>([]);
 
-  console.log(turns, pickOne, pickTwo, setPickOne, setPickTwo);
-
+  // Function to shuffle cards and reset the game state
   const shuffle = () => {
     const doubledArray = [...cardData, ...cardData]
       .sort(() => Math.random() - 0.5)
-      .map((card) => ({ ...card, id: Math.random() }));
+      .map((card, index) => ({ ...card, id: index }));
     setCards(doubledArray);
-    setTurns(0);
+    //RESET ITEMS
+    setFlippedCards([]);
+    setMatchedCards([]);
+    setPickOne(null);
+    setPickTwo(null);
   };
 
-  const handlePick = (name: string) => {
-    console.log("Card picked:", name);
-    setFlippedCards([...flippedCards, name]);
+  const handlePick = (card: CardInterface, index: number) => {
+    // Ignore if two cards are already picked
+    if (pickOne && pickTwo) return;
+
+    // Ignore if the card is already flipped or matched
+    if (flippedCards.includes(index) || matchedCards.includes(index)) return;
+
+    // Update flipped cards
+    const newFlippedCards = [...flippedCards, index];
+    setFlippedCards(newFlippedCards);
+
+    // If no first pick, set the first picked card
+    if (!pickOne) {
+      setPickOne(card);
+    } else {
+      const currentPickTwo = card;
+      setPickTwo(currentPickTwo);
+
+      setTimeout(() => {
+        checkForMatch(newFlippedCards, pickOne, currentPickTwo);
+      }, 1000);
+    }
+  };
+
+  const checkForMatch = (
+    flipped: number[],
+    pickOne: CardInterface | null,
+    pickTwo: CardInterface | null
+  ) => {
+    if (pickOne && pickTwo) {
+      if (pickOne.name === pickTwo.name) {
+        alert("Match found!");
+        const newMatchedCards = [...matchedCards, ...flipped];
+        setMatchedCards(newMatchedCards);
+
+        // Check if all cards are matched (strange, it's either 14 or 16???)
+        if (newMatchedCards.length === 14 || newMatchedCards.length === 16) {
+          alert("You Win!");
+          window.location.reload();
+        }
+      } else {
+        alert("No match!");
+        setFlippedCards([]);
+      }
+      // Reset picked cards
+      setPickOne(null);
+      setPickTwo(null);
+    }
   };
 
   return (
@@ -38,10 +85,11 @@ const App: React.FC = () => {
       <CardGrid>
         {cards.map((item, i) => (
           <Card
-            key={i}
+            key={item.id}
             name={item.name}
             img={item.img}
-            handlePick={handlePick}
+            handlePick={() => handlePick(item, i)}
+            isFlipped={flippedCards.includes(i) || matchedCards.includes(i)} // Check if card is flipped or matched
           />
         ))}
       </CardGrid>
@@ -49,4 +97,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default App; // Export the App component
