@@ -17,17 +17,17 @@ const Game: React.FC = () => {
   const [bannerMessage, setBannerMessage] = useState<string>("");
   const [bannerVisible, setBannerVisible] = useState<boolean>(false);
   const [bannerColor, setBannerColor] = useState<string>("gray"); // State for the banner color
+  const [matchCount, setMatchCount] = useState<number>(0); // Track the number of matched pairs
   const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
 
-  // Fetch card data based on the current theme
   useEffect(() => {
     shuffle();
   }, [theme]);
 
-  // Function to shuffle cards and reset the game state
+  //Function to shuffle cards and reset the game state
   const shuffle = () => {
-    const cardData = getCardData(theme); // Get card data based on the current theme
+    const cardData = getCardData(theme);
     const doubledArray = [...cardData, ...cardData]
       .sort(() => Math.random() - 0.5)
       .map((card, index) => ({ ...card, id: index }));
@@ -38,9 +38,8 @@ const Game: React.FC = () => {
     setMatchedCards([]);
     setPickOne(null);
     setPickTwo(null);
+    setMatchCount(0);
   };
-
-  //console.log(cards.length);
 
   const handlePick = (card: CardInterface, index: number) => {
     // Ignore if two cards are already picked
@@ -84,12 +83,13 @@ const Game: React.FC = () => {
         showBanner("Match found!", "green");
         const newMatchedCards = [...matchedCards, ...flipped];
         setMatchedCards(newMatchedCards);
+        setMatchCount(matchCount + 1);
 
-        // Check if all cards are matched
-        if (newMatchedCards.length === 14) {
+        // Check if six pairs are matched - getting values of 14 or 16 in previous code, this seems like the best fix
+        if (matchCount + 1 === 6) {
           showBanner("You Win!", "blue");
 
-          //delay of 2 seconds before returning home
+          // Delay of 2 seconds before returning home
           setTimeout(() => {
             navigate("/");
           }, 2000);
@@ -103,9 +103,6 @@ const Game: React.FC = () => {
       setPickTwo(null);
     }
   };
-
-  console.log(cards.length);
-  console.log(matchedCards);
 
   return (
     <>
