@@ -5,18 +5,19 @@ import card from "../../assets/images/card.jpg";
 interface CardProps {
   img: string;
   name: string;
+  handlePick: (name: string) => void;
 }
 
-const Card: React.FC<CardProps> = ({ img, name }) => {
+const Card: React.FC<CardProps> = ({ img, name, handlePick }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const handleFlip = (cardName: string) => {
+  const handleClick = () => {
     setIsFlipped((prev) => !prev);
-    console.log(cardName);
+    handlePick(name);
   };
 
   return (
-    <div className="flip-card" onClick={() => handleFlip(name)}>
+    <div className="flip-card" onClick={handleClick}>
       <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
         <div className="flip-card-front">
           <img className="card-image" src={card} alt={name} />
