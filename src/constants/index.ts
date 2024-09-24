@@ -120,13 +120,13 @@ const artCards: CardInterface[] = [
   },
   {
     id: 17,
-    name: "artOne",
-    img: artOne,
+    name: "artFive",
+    img: artFive,
   },
   {
     id: 18,
-    name: "artTwo",
-    img: artTwo,
+    name: "artSix",
+    img: artSix,
   },
 ];
 
