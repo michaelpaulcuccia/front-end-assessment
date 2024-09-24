@@ -14,6 +14,14 @@ import dogFour from "../assets/images/dogFour.jpg";
 import catOne from "../assets/images/catOne.jpg";
 import catTwo from "../assets/images/catTwo.jpg";
 
+//ART
+import artOne from "../assets/images/artOne.jpg";
+import artTwo from "../assets/images/artTwo.jpg";
+import artThree from "../assets/images/artThree.jpg";
+import artFour from "../assets/images/artFour.jpg";
+import artFive from "../assets/images/artFive.jpg";
+import artSix from "../assets/images/artSix.jpg";
+
 //DEFAULT CARD BACK
 import card from "../assets/images/card.jpg";
 
@@ -89,11 +97,45 @@ const petCards: CardInterface[] = [
   },
 ];
 
+const artCards: CardInterface[] = [
+  {
+    id: 13,
+    name: "artOne",
+    img: artOne,
+  },
+  {
+    id: 14,
+    name: "artTwo",
+    img: artTwo,
+  },
+  {
+    id: 15,
+    name: "artThree",
+    img: artThree,
+  },
+  {
+    id: 16,
+    name: "artFour",
+    img: artFour,
+  },
+  {
+    id: 17,
+    name: "artOne",
+    img: artOne,
+  },
+  {
+    id: 18,
+    name: "artTwo",
+    img: artTwo,
+  },
+];
+
 export const getCardData = (theme: string): CardInterface[] => {
   switch (theme) {
     case "pets":
       return petCards;
-
+    case "art":
+      return artCards;
     default:
       return travelCards;
   }
