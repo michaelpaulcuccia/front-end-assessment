@@ -6,11 +6,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ children }) => {
-  return (
-    <header className="header">
-      <div>{children}</div>
-    </header>
-  );
+  return <header className="header">{children}</header>;
 };
 
 export default Header;

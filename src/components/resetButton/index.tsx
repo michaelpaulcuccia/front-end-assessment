@@ -7,7 +7,7 @@ interface ButtonProps {
 
 const ResetButton: React.FC<ButtonProps> = ({ onClick }) => {
   const handleClick = () => {
-    onClick(); //resets game by triggering shuffle //VERCEL BUG ON RELOAD...2 of 2
+    onClick();
   };
 
   return (
