@@ -28,6 +28,13 @@ h3 {
   color: #444444;
 }
 
+.about-list li {
+  margin-bottom: 10px;
+}
+sup {
+  font-size: 10px;
+}
+
 .styled-link:hover {
   font-weight: bold;
 }
