@@ -2,8 +2,8 @@ import React from "react";
 import "./list.css";
 
 interface ListProps {
-  icon: React.ReactElement; // Accepts a React element (e.g., an icon component)
-  text: string | React.ReactElement; // Accepts either a string or a React element
+  icon: React.ReactElement;
+  text: string | React.ReactElement; //passing string or element to handle <sup>
 }
 
 const List: React.FC<ListProps> = ({ icon, text }) => {

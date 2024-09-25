@@ -1,34 +1,34 @@
 //TRAVEL
-import beach from "../assets/images/beach.jpg";
-import camel from "../assets/images/camel.jpg";
-import cathedral from "../assets/images/cathedral.jpg";
-import lighthouse from "../assets/images/lighthouse.jpg";
-import road from "../assets/images/road.jpg";
-import venice from "../assets/images/venice.jpg";
+import beach from "../assets/images/travel/beach.jpg";
+import camel from "../assets/images/travel/camel.jpg";
+import cathedral from "../assets/images/travel/cathedral.jpg";
+import lighthouse from "../assets/images/travel/lighthouse.jpg";
+import road from "../assets/images/travel/road.jpg";
+import venice from "../assets/images/travel/venice.jpg";
 
 //PETS
-import dogOne from "../assets/images/dogOne.jpg";
-import dogTwo from "../assets/images/dogTwo.jpg";
-import dogThree from "../assets/images/dogThree.jpg";
-import dogFour from "../assets/images/dogFour.jpg";
-import catOne from "../assets/images/catOne.jpg";
-import catTwo from "../assets/images/catTwo.jpg";
+import dogOne from "../assets/images/pets/dogOne.jpg";
+import dogTwo from "../assets/images/pets/dogTwo.jpg";
+import dogThree from "../assets/images/pets/dogThree.jpg";
+import dogFour from "../assets/images/pets/dogFour.jpg";
+import catOne from "../assets/images/pets/catOne.jpg";
+import catTwo from "../assets/images/pets/catTwo.jpg";
 
 //ART
-import artOne from "../assets/images/artOne.jpg";
-import artTwo from "../assets/images/artTwo.jpg";
-import artThree from "../assets/images/artThree.jpg";
-import artFour from "../assets/images/artFour.jpg";
-import artFive from "../assets/images/artFive.jpg";
-import artSix from "../assets/images/artSix.jpg";
+import artOne from "../assets/images/art/artOne.jpg";
+import artTwo from "../assets/images/art/artTwo.jpg";
+import artThree from "../assets/images/art/artThree.jpg";
+import artFour from "../assets/images/art/artFour.jpg";
+import artFive from "../assets/images/art/artFive.jpg";
+import artSix from "../assets/images/art/artSix.jpg";
 
 //MUSIC
-import musicOne from "../assets/images/musicOne.jpg";
-import musicTwo from "../assets/images/musicTwo.jpg";
-import musicThree from "../assets/images/musicThree.jpg";
-import musicFour from "../assets/images/musicFour.jpg";
-import musicFive from "../assets/images/musicFive.jpg";
-import musicSix from "../assets/images/musicSix.jpg";
+import musicOne from "../assets/images/music/musicOne.jpg";
+import musicTwo from "../assets/images/music/musicTwo.jpg";
+import musicThree from "../assets/images/music/musicThree.jpg";
+import musicFour from "../assets/images/music/musicFour.jpg";
+import musicFive from "../assets/images/music/musicFive.jpg";
+import musicSix from "../assets/images/music/musicSix.jpg";
 
 //DEFAULT CARD BACK
 import card from "../assets/images/card.jpg";
