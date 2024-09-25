@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import { SiVercel } from "react-icons/si";
 import { LuCookie } from "react-icons/lu";
 import { FiNavigation } from "react-icons/fi";
 import { CiRoute } from "react-icons/ci";
@@ -7,6 +8,7 @@ import { FaReact } from "react-icons/fa";
 import { GiPokerHand } from "react-icons/gi";
 import { IoRadioButtonOnSharp } from "react-icons/io5";
 import { TbSeo } from "react-icons/tb";
+import { MdOutlineCleanHands } from "react-icons/md";
 import List from "../components/list";
 
 const About = () => {
@@ -26,10 +28,16 @@ const About = () => {
         />
       </Helmet>
       <h3 className="text-style">
-        Thank you for the opportunity to work on this project! Here are some of
-        the features I worked on:
+        <strong>
+          Thank you for the opportunity to work on this project! Here are some
+          of the features I worked on:
+        </strong>
       </h3>
       <div style={{ marginTop: "24px" }}>
+        <List
+          text="Vercel automatic deployments."
+          icon={<SiVercel fontSize={32} />}
+        />
         <List
           text="Cookie consent modal for user agreement."
           icon={<LuCookie fontSize={32} />}
@@ -67,12 +75,46 @@ const About = () => {
           text="Implements React Helmet for improved SEO."
           icon={<TbSeo fontSize={32} />}
         />
+        <List
+          text="Clean codebase with well-structured logic and organization."
+          icon={<MdOutlineCleanHands fontSize={32} />}
+        />
       </div>
-      <div style={{ marginTop: "12px" }}>
+      <div>
         <small>
           1. Accessibility testing for the game component has not been
           conducted.{" "}
         </small>
+      </div>
+      <div style={{ marginTop: "38px" }}>
+        <h3 className="text-style">
+          <strong>Some thoughts on this project:</strong>
+        </h3>
+        <h3 className="text-style">
+          For this project I didn’t want to overload the app with too many UI
+          effects. I included a navigation bar animation along with the card
+          flip to show some of my CSS skills but felt that anything more would
+          be excessive. I feel that a clean, minimal UI would facilitate a more
+          direct user experience. Since the app is a game, the focus should be
+          on playing, not getting distracted by excessive elements or
+          components.
+        </h3>
+        <h3 className="text-style">
+          It was important for me to demonstrate a mature approach to
+          development by incorporating essential, though less exciting, features
+          like SEO and accessibility. These 'behind-the-scenes' elements enhance
+          the overall quality and usability of the app, ensuring it meets
+          industry standards. The same goes for the implementation of a cookie
+          consent modal, which shows attention to privacy and compliance without
+          overwhelming the user experience.
+        </h3>
+        <h3 className="text-style">
+          Please visit my{" "}
+          <a href="https://github.com/michaelpaulcuccia" target="_blank">
+            GitHub
+          </a>{" "}
+          to view other my projects and learn more.
+        </h3>
       </div>
     </>
   );
