@@ -121,7 +121,7 @@ const Game: React.FC = () => {
         />
       </Helmet>
       <Header>
-        <h3>Card Pairing Challenge</h3>
+        <h3>Welcome to the Card Pairing Challenge!</h3>
         <ResetButton onClick={shuffle} />
       </Header>
       <CardGrid>

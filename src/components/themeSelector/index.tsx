@@ -19,8 +19,7 @@ const ThemeSelector: React.FC = () => {
   return (
     <div>
       <h3>
-        Welcome! <br />
-        Please Select A Theme:
+        Please select a theme below. Or, click on the Game tab above to play.
       </h3>
       <br />
       {themes.map((themeOption) => (
