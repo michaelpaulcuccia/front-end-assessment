@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { ThemeContext } from "../context/ThemeContext";
 import Header from "../components/header";
 import ResetButton from "../components/resetButton";
@@ -106,6 +107,19 @@ const Game: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Home</title>
+        <meta
+          name="description"
+          content="This is the game of the application"
+        />
+        <meta name="keywords" content="React, SEO, Helmet" />
+        <meta name="author" content="Michael Cuccia" />
+        <link
+          rel="canonical"
+          href="https://front-end-assessment-ashy.vercel.app/Game"
+        />
+      </Helmet>
       <Header>
         <ResetButton onClick={shuffle} />
       </Header>
