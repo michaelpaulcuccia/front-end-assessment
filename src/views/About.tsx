@@ -16,7 +16,13 @@ const About = () => {
           href="https://front-end-assessment-ashy.vercel.app/About"
         />
       </Helmet>
-      <h3>Thank you for the opportunity to work on this project!</h3>
+      <h3>
+        Thank you for the opportunity to work on this project! Here are some of
+        the features I worked on:
+      </h3>
+      <ul>
+        <li></li>
+      </ul>
     </>
   );
 };
