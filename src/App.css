@@ -2,6 +2,43 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  font-family: Open, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
+h3 {
+  color: #343434;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
 
+.text-style {
+  color: #343434;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.styled-link {
+  font-size: 22px;
+  text-decoration: none;
+  color: #444444;
+}
+
+.about-list li {
+  margin-bottom: 10px;
+}
+sup {
+  font-size: 10px;
+}
+
+.styled-link:hover {
+  font-weight: bold;
+}

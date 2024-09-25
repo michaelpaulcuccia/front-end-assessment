@@ -11,7 +11,9 @@ const List: React.FC<ListProps> = ({ icon, text }) => {
     <div className="list-container">
       <div className="item-container">
         <div>{icon}</div>
-        <div className="text-container">{text}</div>
+        <div className="text-container">
+          <h3 className="text-style">{text}</h3>
+        </div>
       </div>
     </div>
   );

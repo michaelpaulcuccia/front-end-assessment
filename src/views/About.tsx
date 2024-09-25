@@ -25,7 +25,7 @@ const About = () => {
           href="https://front-end-assessment-ashy.vercel.app/About"
         />
       </Helmet>
-      <h3>
+      <h3 className="text-style">
         Thank you for the opportunity to work on this project! Here are some of
         the features I worked on:
       </h3>
