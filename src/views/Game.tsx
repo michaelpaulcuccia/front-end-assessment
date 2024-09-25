@@ -34,7 +34,7 @@ const Game: React.FC = () => {
       .map((card, index) => ({ ...card, id: index }));
 
     setCards(doubledArray);
-    // Resets game state
+    //Resets game state
     setFlippedCards([]);
     setMatchedCards([]);
     setPickOne(null);
@@ -43,13 +43,13 @@ const Game: React.FC = () => {
   };
 
   const handlePick = (card: CardInterface, index: number) => {
-    // Ignore if two cards are already picked
+    //Ignore if two cards are already picked
     if (pickOne && pickTwo) return;
 
-    // Ignore if the card is already flipped or matched
+    //Ignore if the card is already flipped or matched
     if (flippedCards.includes(index) || matchedCards.includes(index)) return;
 
-    // Update flipped cards
+    //Update flipped cards
     const newFlippedCards = [...flippedCards, index];
     setFlippedCards(newFlippedCards);
 
@@ -86,11 +86,11 @@ const Game: React.FC = () => {
         setMatchedCards(newMatchedCards);
         setMatchCount(matchCount + 1);
 
-        // Check if six pairs are matched - getting values of 14 or 16 in previous code, this seems like the best fix
+        //Check if six pairs are matched
         if (matchCount + 1 === 6) {
           showBanner("You Win!", "blue");
 
-          // Delay of 2 seconds before returning home
+          //Delay of 2 seconds before returning home so user can see banner
           setTimeout(() => {
             navigate("/");
           }, 2000);
@@ -131,14 +131,14 @@ const Game: React.FC = () => {
             name={item.name}
             img={item.img}
             handlePick={() => handlePick(item, i)}
-            isFlipped={flippedCards.includes(i) || matchedCards.includes(i)} // Check if card is flipped or matched
+            isFlipped={flippedCards.includes(i) || matchedCards.includes(i)}
           />
         ))}
       </CardGrid>
       <Banner
         message={bannerMessage}
         visible={bannerVisible}
-        backgroundColor={bannerColor} // Pass the background color
+        backgroundColor={bannerColor}
       />
     </>
   );

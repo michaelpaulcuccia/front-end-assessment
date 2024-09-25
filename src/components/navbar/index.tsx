@@ -4,7 +4,7 @@ import Line from "../line";
 import zicasso_logo from "../../assets/zicasso_logo.png";
 
 interface NavBarProps {
-  children: React.ReactNode; // Typing for the children prop
+  children: React.ReactNode;
 }
 
 const NavBar: React.FC<NavBarProps> = ({ children }) => {

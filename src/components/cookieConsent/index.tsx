@@ -22,7 +22,7 @@ const CookieConsent: React.FC = () => {
   }, []);
 
   const handleAccept = () => {
-    setCookie("cookieConsent", "true", 30); // Cookie expires after 30 minutes
+    setCookie("cookieConsent", "true", 30); //cookie expires after 30 minutes
     setIsVisible(false);
   };
 
@@ -33,6 +33,8 @@ const CookieConsent: React.FC = () => {
   if (!isVisible) {
     return null;
   }
+
+  //buttons have tabIndex so user will go through model before navbar (accessibility)
 
   return (
     <div className="overlay">
