@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import { LuCookie } from "react-icons/lu";
 import { FiNavigation } from "react-icons/fi";
+import { CiRoute } from "react-icons/ci";
 import { BiAccessibility } from "react-icons/bi";
 import { FaReact } from "react-icons/fa";
 import { GiPokerHand } from "react-icons/gi";
@@ -36,6 +37,10 @@ const About = () => {
         <List
           text="Animated navigation bar and company logo that appear upon page load."
           icon={<FiNavigation fontSize={32} />}
+        />
+        <List
+          text="Integrates React-Router-DOM to facilitate routing and navigation."
+          icon={<CiRoute fontSize={32} />}
         />
         <List
           icon={<BiAccessibility fontSize={32} />}
