@@ -12,6 +12,11 @@
   }
 }
 
+.nav-image {
+  height: 84px;
+  width: 304px;
+}
+
 .nav-container {
   display: flex;
   justify-content: flex-start;
