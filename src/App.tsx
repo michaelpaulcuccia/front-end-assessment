@@ -14,6 +14,7 @@ const App: React.FC = () => {
     <ThemeProvider>
       <Router>
         <Container>
+          <CookieConsent />
           <NavBar>
             <div>
               <Link className="styled-link" to="/">
@@ -36,7 +37,6 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/game" element={<Game />} />
           </Routes>
-          <CookieConsent />
         </Container>
       </Router>
     </ThemeProvider>
