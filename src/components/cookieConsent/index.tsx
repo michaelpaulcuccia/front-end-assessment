@@ -44,10 +44,14 @@ const CookieConsent: React.FC = () => {
         <div>If you accept, the cookie will delete itself in 30 minutes.</div>
         <div className="cookie-btn">
           <div>
-            <button onClick={handleAccept}>Accept</button>
+            <button tabIndex={1} onClick={handleAccept}>
+              Accept
+            </button>
           </div>
           <div>
-            <button onClick={handleDecline}>Decline</button>
+            <button tabIndex={2} onClick={handleDecline}>
+              Decline
+            </button>
           </div>
         </div>
       </div>

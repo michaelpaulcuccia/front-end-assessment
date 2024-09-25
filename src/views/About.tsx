@@ -53,11 +53,11 @@ const About = () => {
         />
         <List
           icon={<FaReact fontSize={32} />}
-          text="Uses React Context to manage the game's card faces. App is set by default to a Travel theme, a reflection of Zicasso."
+          text="Uses React Context to manage the game's card faces. App is set by default to a travel theme, a reflection of Zicasso."
         />
         <List
           icon={<GiPokerHand fontSize={32} />}
-          text="Displays playing cards in a responsive grid with animations for flipping. Includes a modal to show match results and winning notifications."
+          text="Displays playing cards in a responsive grid with animations for flipping. Includes a modal to show match results and win notifications."
         />
         <List
           icon={<IoRadioButtonOnSharp fontSize={32} />}
