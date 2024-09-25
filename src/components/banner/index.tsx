@@ -15,7 +15,9 @@ const Banner: React.FC<BannerProps> = ({
 
   return (
     <div className="banner" style={{ backgroundColor }}>
-      <span>{message}</span>
+      <span>
+        <h3 style={{ color: "white", fontSize: "28px" }}>{message}</h3>
+      </span>
     </div>
   );
 };
