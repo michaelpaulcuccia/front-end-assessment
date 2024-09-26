@@ -91,22 +91,30 @@ const About = () => {
           <strong>Some thoughts on this project:</strong>
         </h3>
         <h3 className="text-style">
-          For this project I didn’t want to overload the app with too many UI
-          effects. I included a navigation bar animation along with the card
-          flip to show some of my CSS skills but felt that anything more would
-          be excessive. I feel that a clean, minimal UI would facilitate a more
-          direct user experience. Since the app is a game, the focus should be
-          on playing, not getting distracted by excessive elements or
-          components.
+          For this project I didn’t want to overload the app with too many
+          animated UI transitions. I included a navigation bar animation along
+          with the card flip to show my ability with these CSS skills but felt
+          that anything more would be excessive. It's my belief that a clean,
+          minimal UI would facilitate a more direct user experience. Since the
+          app is a game, the focus should be on playing, not getting distracted
+          by superfluous effects or components.
         </h3>
         <h3 className="text-style">
-          It was important for me to demonstrate a mature approach to
+          While this application is responsive, I chose not to present the cards
+          in a grid on mobile view. My opinion is that maintaining the same grid
+          structure would result in significantly smaller cards. This reduction
+          in size would make it difficult for users to see the card content
+          clearly, tap accurately on individual cards, and could lead to a
+          frustrating gameplay experience.
+        </h3>
+        <h3 className="text-style">
+          Lastly, it was important for me to demonstrate a mature approach to
           development by incorporating essential, though less exciting, features
-          like SEO and accessibility. These 'behind-the-scenes' elements enhance
-          the overall quality and usability of the app, ensuring it meets
-          industry standards. The same goes for the implementation of a cookie
-          consent modal, which shows attention to privacy and compliance without
-          overwhelming the user experience.
+          like SEO and accessibility as my 'personal touch.' These
+          behind-the-scenes elements enhance the app’s overall quality and
+          usability, aligning it with industry standards. The same applies to
+          the implementation of a cookie consent modal, which reflects attention
+          to privacy and compliance without disrupting the user experience.
         </h3>
         <h3 className="text-style">
           Please visit my{" "}
