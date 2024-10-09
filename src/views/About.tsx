@@ -61,7 +61,7 @@ const About = () => {
         />
         <List
           icon={<FaReact fontSize={32} />}
-          text="Uses React Context to manage the game's card faces. App is set by default to a travel theme, a reflection of Zicasso."
+          text="Uses React Context to manage the game's card faces. App is set by default to a travel theme, a reflection of COMPANY."
         />
         <List
           icon={<GiPokerHand fontSize={32} />}

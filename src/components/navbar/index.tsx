@@ -1,7 +1,7 @@
 import React from "react";
 import "./navbar.css";
 import Line from "../line";
-import zicasso_logo from "../../assets/zicasso_logo.png";
+import logo_generic from "../../assets/logo-generic.svg";
 
 interface NavBarProps {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ children }) => {
   return (
     <>
-      <img className="nav-image" src={zicasso_logo} alt="Zicasso Logo" />
+      <img className="nav-image" src={logo_generic} alt="Generic Logo" />
       <div className="nav-container">{children}</div>
       <Line />
     </>
